@@ -71,22 +71,26 @@ export default function Paquetes() {
 
       <section className="mx-auto max-w-7xl px-5 pb-8" aria-labelledby="comparar-titulo">
         <h2 id="comparar-titulo" className="font-display text-3xl font-bold text-marino md:text-4xl">Compara qué trae cada paquete</h2>
-        <div className="mt-8 overflow-x-auto rounded-[1.25rem] border border-borde">
-          <table className="w-full min-w-[640px] text-left">
+        {/* En celular la tabla cabe completa: columnas fijas, textos y márgenes más chicos */}
+        <div className="mt-8 overflow-hidden rounded-[1.25rem] border border-borde">
+          <table className="w-full table-fixed text-left text-sm sm:text-base">
             <thead className="bg-niebla">
               <tr>
-                <th scope="col" className="etiqueta px-5 py-4 font-normal text-pizarra">Unidad</th>
+                <th scope="col" className="etiqueta w-[34%] px-3 py-3 font-normal text-pizarra sm:w-auto sm:px-5 sm:py-4">Unidad</th>
                 {paquetes.map((p) => (
-                  <th key={p.id} scope="col" className="px-5 py-4 text-center font-semibold text-marino">{p.nombre}</th>
+                  <th key={p.id} scope="col" className="px-1.5 py-3 text-center text-xs font-semibold leading-tight text-marino sm:px-5 sm:py-4 sm:text-base">{p.nombre}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {servicios.map((s) => (
                 <tr key={s.slug} className="border-t border-borde">
-                  <th scope="row" className="px-5 py-4 font-medium">{s.nombre}</th>
+                  <th scope="row" className="px-3 py-3 font-medium leading-tight sm:px-5 sm:py-4">
+                    <span className="hidden sm:inline">MD </span>
+                    {s.nombre.replace("MD ", "")}
+                  </th>
                   {paquetes.map((p) => (
-                    <td key={p.id} className="px-5 py-4 text-center">
+                    <td key={p.id} className="px-1.5 py-3 text-center sm:px-5 sm:py-4">
                       {p.unidades.includes(s.slug) ? (
                         <Icono nombre="check" className="mx-auto h-5 w-5 text-cobalto" />
                       ) : (

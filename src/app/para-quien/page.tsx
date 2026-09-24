@@ -24,8 +24,19 @@ export default function ParaQuien() {
       </section>
       <section className="mx-auto max-w-7xl px-5 pb-8" aria-labelledby="resumen-titulo">
         <h2 id="resumen-titulo" className="font-display text-3xl font-bold text-marino md:text-4xl">De un vistazo</h2>
-        <div className="mt-8 overflow-x-auto rounded-[1.25rem] border border-borde">
-          <table className="w-full min-w-[720px] text-left">
+        {/* Celular: tarjetas apiladas. Escritorio: tabla */}
+        <ul className="mt-8 space-y-3 md:hidden">
+          {segmentos.map((s) => (
+            <li key={s.id} className="rounded-[1.25rem] border border-borde p-5">
+              <p className="font-semibold text-marino">{s.nombre}</p>
+              <p className="text-sm text-pizarra">{s.perfil}</p>
+              <p className="mt-3 text-sm"><span className="etiqueta block !text-[0.62rem] text-pizarra">Dolor principal</span>{s.dolor}</p>
+              <p className="mt-3 text-sm font-medium"><span className="etiqueta block !text-[0.62rem] font-normal text-cobalto">Servicio de entrada</span>{s.entrada}</p>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-8 hidden overflow-x-auto rounded-[1.25rem] border border-borde md:block">
+          <table className="w-full text-left">
             <thead className="etiqueta bg-niebla text-pizarra">
               <tr>
                 <th scope="col" className="px-5 py-4 font-normal">Segmento</th>

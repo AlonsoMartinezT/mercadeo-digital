@@ -29,8 +29,18 @@ export default function Servicios() {
 
       <section className="mx-auto max-w-7xl px-5 pb-8" aria-labelledby="tabla-titulo">
         <h2 id="tabla-titulo" className="font-display text-3xl font-bold text-marino md:text-4xl">Qué incluye cada unidad</h2>
-        <div className="mt-8 overflow-x-auto rounded-[1.25rem] border border-borde">
-          <table className="w-full min-w-[720px] text-left">
+        {/* Celular: tarjetas apiladas. Escritorio: tabla */}
+        <ul className="mt-8 space-y-3 md:hidden">
+          {servicios.map((s) => (
+            <li key={s.slug} className="rounded-[1.25rem] border border-borde p-5">
+              <p className="font-semibold text-marino">{s.nombre}</p>
+              <p className="mt-2 text-sm text-pizarra">{s.incluye.join(", ")}</p>
+              <p className="mt-3 text-sm font-medium"><span className="etiqueta block !text-[0.62rem] font-normal text-cobalto">Entregable principal</span>{s.entregable}</p>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-8 hidden overflow-x-auto rounded-[1.25rem] border border-borde md:block">
+          <table className="w-full text-left">
             <thead className="etiqueta bg-niebla text-pizarra">
               <tr>
                 <th scope="col" className="px-5 py-4 font-normal">Unidad</th>
