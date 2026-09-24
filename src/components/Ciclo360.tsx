@@ -18,9 +18,9 @@ export default function Ciclo360({ oscuro = true }: { oscuro?: boolean }) {
 
   return (
     <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-      <div className="relative mx-auto w-full max-w-[19rem] sm:max-w-[26rem] lg:max-w-[30rem]">
+      <div className="relative mx-auto w-full max-w-[19rem] sm:max-w-[24rem]">
         <svg viewBox="0 0 380 380" className="w-full" aria-hidden="true">
-          <circle cx={C} cy={C} r={R} fill="none" stroke={oscuro ? "rgb(255 255 255 / .12)" : "#d9e0ec"} strokeWidth="2" strokeDasharray="4 8" />
+          <circle cx={C} cy={C} r={R} fill="none" stroke={oscuro ? "rgb(255 255 255 / .28)" : "#d9e0ec"} strokeWidth="2" strokeDasharray="4 8" />
           <circle
             cx={C}
             cy={C}
@@ -69,8 +69,8 @@ export default function Ciclo360({ oscuro = true }: { oscuro?: boolean }) {
         <p className={`etiqueta ${oscuro ? "text-turquesa" : "text-cobalto"}`}>Fase {f.n} de 5 · {f.detalle}</p>
         <h3 className="mt-3 font-display text-4xl font-bold md:text-5xl">{f.nombre}</h3>
         <p className={`mx-auto mt-5 max-w-xl text-lg lg:mx-0 ${oscuro ? "text-hielo" : "text-pizarra"}`}>{f.texto}</p>
-        <div className={`mt-8 inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-2xl px-5 py-4 ${oscuro ? "bg-white/5" : "bg-niebla"}`}>
-          <span className="etiqueta text-pizarra">Entregable</span>
+        <div className={`mt-8 inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-2xl px-5 py-4 ${oscuro ? "border border-white/15 bg-white/[0.06]" : "bg-niebla"}`}>
+          <span className={`etiqueta ${oscuro ? "text-turquesa" : "text-pizarra"}`}>Entregable</span>
           <span className="font-semibold">{f.entregable}</span>
         </div>
         <div className="mt-8 flex justify-center gap-2 lg:justify-start">

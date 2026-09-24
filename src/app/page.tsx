@@ -75,14 +75,16 @@ export default function Inicio() {
       <section className="oscuro relative overflow-hidden" aria-labelledby="metodo-titulo">
         <div className="reticula absolute inset-0" aria-hidden="true" />
         <div className="relative mx-auto max-w-7xl px-5 py-24">
-          <div className="max-w-2xl">
-            <p className="etiqueta text-turquesa">Método MD 360</p>
-            <h2 id="metodo-titulo" className="mt-3 font-display text-4xl font-bold tracking-tight text-balance md:text-5xl">
-              Cinco fases. Cada una cierra con algo que apruebas.
-            </h2>
-            <p className="mt-5 text-lg text-hielo">En los planes mensuales el ciclo se repite: medimos, ajustamos y volvemos a optimizar.</p>
+          <div className="grid gap-6 lg:grid-cols-2 lg:items-end lg:gap-16">
+            <div>
+              <p className="etiqueta text-turquesa">Método MD 360</p>
+              <h2 id="metodo-titulo" className="mt-3 font-display text-4xl font-bold tracking-tight text-balance md:text-5xl">
+                Cinco fases. Cada una cierra con algo que apruebas.
+              </h2>
+            </div>
+            <p className="text-lg text-hielo lg:pb-2">En los planes mensuales el ciclo se repite: medimos, ajustamos y volvemos a optimizar.</p>
           </div>
-          <div className="mt-14">
+          <div className="mt-12 border-t border-white/10 pt-12">
             <Ciclo360 />
           </div>
         </div>
